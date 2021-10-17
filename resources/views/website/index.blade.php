@@ -1,7 +1,5 @@
-<?php 
-    include "designs/header.php";
-    include "designs/navbar.php";
-?>
+@extends('website.layouts.master')
+@section('content')
     <div class="container-fluid">
         <div data-bs-interval="3000" id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -595,6 +593,4 @@
         <!-- End blog -->
       
     </main>
-   <?php 
-    include "designs/footer.php"
-   ?>
+@endsection
