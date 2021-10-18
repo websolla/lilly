@@ -6,17 +6,18 @@
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
 							<div class=" pull-left">
-								<div class="page-title">Add {!! Helper::tr($itemname) !!}</div>
+								<div class="page-title">Edit {!! Helper::tr($itemname) !!}</div>
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                 href="{{ url('admin') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li class="active"> New {!! Helper::tr($itemname) !!}</li>
+
+								<li class="active">Edit {!! Helper::tr($itemname) !!}</li>
 							</ol>
 						</div>
-					</div>
-					@include('admin.error')
+                    </div>
+                    @include('admin.error')
 					<!-- BEGIN PROFILE CONTENT -->
 					<div class="profile-content">
 						<div class="row">
@@ -34,7 +35,9 @@
 							<div class="white-box">
 								<!-- Tab panes -->
 								<div class="tab-content">
+
 									@foreach(LaravelLocalization::getSupportedLocales() as $key => $language)
+									 
 									<div class="tab-pane tab-language" id="tab-{{ $key }}">
 										<div class="row">
 											<div class="col-md-12 col-sm-12">
@@ -42,39 +45,59 @@
 													<header>{{ $language['name'] }}</header>
 												</div>
 												<div class="card-body " id="bar-parent1">
-													<form method="post" action="{{ url('admin/'.$itemsnames) }}"  enctype="multipart/form-data">
-														@csrf
-															<div class="row">
+													<form method="post" action="{{ url('websolla-db/'.$itemsnames.'/'.$items->id) }}"  enctype="multipart/form-data">
+														<input name="_method" type="hidden" value="PUT">
+														{!! csrf_field() !!}
+														<div class="row">
 															<div class="col-lg-12 p-t-20">
-																<label >Title <span style="color:red">{{ $language['name'] }}</span> </label>
+																<label >Title {{ $language['name'] }}</label>
 																<div
 																	class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-																	<input type="text" name="title[{{$key}}]" class="mdl-textfield__input"  id="txtFirstName">
+																	<input type="text" name="title[{{$key}}]" class="mdl-textfield__input" value="{{ $items->title[$key] }}"  id="txtFirstName">
 																</div>
 															</div>
 															<div class="col-lg-12 p-t-20">
-																<label>Description <span style="color:red">{{ $language['name']  }}</span>  </label>
+																<label>Description {{ $language['name'] }}</label>
 																<div
 																class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-																<textarea name="text[{{$key}}]" class="mdl-textfield__input ckeditor"></textarea>
+																<textarea name="description[{{$key}}]" class="mdl-textfield__input ">{{ $items->description[$key] }}</textarea>
 															</div>
 														</div>
-
-														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+										
 									@endforeach
 									<div class="row">
-										<div class="col-md-12  p-t-20" style="margin: 0 auto">
+										<div class="col-lg-6">
+											<label >Text Color</label>
 											<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input type="file" name="img" class="mdl-textfield__input" >
-												<label >{{Helper::tr($itemname)}} Image</label>
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input type="color" name="color" class="form-control" value="{{ $items->color }}"  id="txtFirstName">
 											</div>
 										</div>
-									<button style="margin:0 auto" type="submit" class="btn btn-primary">Submit</button>
+
+										<div class="col-lg-6">
+											<label >Slide Link</label>
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input type="text" name="link" class="form-control" value="{{ $items->link }}"  id="txtFirstName">
+											</div>
+										</div>
+										
+										<div class="col-md-12  p-t-20" style="margin: 0 auto">
+											<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+											<input type="file" name="img" class="mdl-textfield__input" >
+											<label >{{ Helper::tr($itemname) }} Image</label>
+										</div>
+											<img style="width:200px;height:200px;" src="{{ Helper::getImg($items->img) }}">
+										</div>
+										<div class="col-md-12 text-center">
+											<button type="submit" class="btn btn-primary">Submit</button>
+										</div>
 								</form>
 								</div>
 								</div>

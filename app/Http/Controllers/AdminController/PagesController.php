@@ -6,29 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Helper\Helper;
+use App\Models\Page as model ;
 
-use App\Models\Sliders as model;
-
-class SlidersController extends Controller
+class PagesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
     public $data = [
-        'view'          => 'sliders',
-        'route'         => 'sliders',
-        'itemname'      => 'slider',
-        'itemsnames'    => 'sliders',
+        'view'          => 'pages',
+        'route'         => 'pages',
+        'itemname'      => 'page',
+        'itemsnames'    => 'pages',
     ];
 
-
-    public function index()
+     public function index()
     {
-
         $items  = model::get();
         return view('admin.' . $this->data['view'] . '.index', compact('items'))->with($this->data);
     }
@@ -48,15 +38,13 @@ class SlidersController extends Controller
     {
 
         $data = $request->validate([
-            'title.*'        => 'required|string',
-            'description.*'  => 'required|string',
-            'color'          => 'required',
-            'link'           => 'required',
+            'title.*'        => 'required|string|max:191',
+            'text.*'         => 'required|string',
             'img'            => 'required|mimes:jpg,jpeg,png',
         ]);
 
         $data['title']        = json_encode( $request->title ); // To Encode Data Into DB
-        $data['description']  = json_encode( $request->description );
+        $data['text']         = json_encode( $request->text );
         $data['img']          = Helper::imageUploade($data['img'], $this->data['view']);
 
         model::create($data);
@@ -73,15 +61,13 @@ class SlidersController extends Controller
     public function update(Request $request, $id){
 
         $data = $request->validate([
-            'title.*'        => 'required|string',
-            'description.*'  => 'required|string',
-            'color'          => 'required',
-            'link'           => 'required',
+            'title.*'        => 'required|string|max:191',
+            'text.*'         => 'required|string',
             'img'            => 'nullable|mimes:jpg,jpeg,png',
         ]);
 
         $data['title']        = json_encode( $request->title ); // To Encode Data Into DB
-        $data['description']  = json_encode( $request->description );
+        $data['text']  = json_encode( $request->text );
 
         if($request['img'] != null){ // If Condition To check If Request != null
             $img_name    = explode("/", $request->img_value);
@@ -89,7 +75,7 @@ class SlidersController extends Controller
         }
 
         $item = model::findOrFail($id)->update($data);
-        return back()->with('success', 'Done');
+        return redirect('websolla-db/'. $this->data['view'])->with('success', 'Done');
 
     }
 

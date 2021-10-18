@@ -42,8 +42,8 @@
 													<header>{{ $language['name'] }}</header>
 												</div>
 												<div class="card-body " id="bar-parent1">
-													<form method="post" action="{{ url('admin/'.$itemsnames) }}"  enctype="multipart/form-data">
-														@csrf
+													<form method="post" action="{{ url('websolla-db/'.$itemsnames) }}"  enctype="multipart/form-data">
+														{!! csrf_field() !!}
 															<div class="row">
 															<div class="col-lg-12 p-t-20">
 																<label >Title <span style="color:red">{{ $language['name'] }}</span> </label>
@@ -56,10 +56,10 @@
 																<label>Description <span style="color:red">{{ $language['name']  }}</span>  </label>
 																<div
 																class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-																<textarea name="description[{{$key}}]" class="mdl-textfield__input "></textarea>
+																<textarea name="text[{{$key}}]" class="mdl-textfield__input ckeditor"></textarea>
 															</div>
 														</div>
-														
+
 														</div>
 												</div>
 											</div>

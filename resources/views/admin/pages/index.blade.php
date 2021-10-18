@@ -33,7 +33,7 @@
 									<div class="row p-b-20">
 										<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group">
-                                            <a href="{{ url('admin/'.$itemsnames.'/create') }}" id="addRow" class="btn btn-info">
+                                            <a href="{{ url('websolla-db/'.$itemsnames.'/create') }}" id="addRow" class="btn btn-info">
 													Add {!! Helper::tr($itemname) !!} <i class="fa fa-plus"></i>
 												</a>
 											</div>
@@ -63,12 +63,12 @@
 														</td>
 														
 													<td class="center">{{ $item->title['en'] }}</td>
-														<td class="center"><a href="{{ url('admin/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
+														<td class="center"><a href="{{ url('websolla-db/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
 														<td class="center">
-															<form method="post" action="{{ url('admin/'.$itemsnames.'/'.$item->id) }}">
+															<form method="post" action="{{ url('websolla-db/'.$itemsnames.'/'.$item->id) }}">
 																<input name="_method" type="hidden" value="DELETE">
-																	@csrf
-																<button value="DELETE" type="submit" class="btn btn-tbl-delete btn-xs">
+																{!! csrf_field() !!}
+																<button @if($item->id == 1) disabled @endif value="DELETE" type="submit" class="btn btn-tbl-delete btn-xs">
 																	<i class="fa fa-trash-o "></i>
 																</button>
 															</form>
