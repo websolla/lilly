@@ -10,7 +10,7 @@
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                href="{{ url('admin') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                href="{{ url('websolla-db') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 
 								<li class="active">Edit {!! Helper::tr($itemname) !!}</li>
@@ -23,12 +23,37 @@
 						<div class="row">
 
                             <div class="col-md-12">
-                                <form method="post" action="{{ url('admin/'.$itemsnames.'/'.$items->id) }}"  enctype="multipart/form-data">
-                                    @csrf
+                                <form method="post" action="{{ url('websolla-db/'.$itemsnames.'/'.$items->id) }}"  enctype="multipart/form-data">
+                                    {!! csrf_field() !!}
                                     <input name="_method" type="hidden" value="PUT">
                                     <div class="white-box">
                                         <!-- Tab panes -->
                                         <div class="tab-content">
+                                            <div class="row">
+                                                <div class="col-md-4  p-t-20">
+                                                    <label>Offer</label>
+                                                    <select class="form-control" name="offer">
+                                                            <option @if($items->offer == 1) selected @endif value="1">On</option>
+                                                            <option @if($items->offer == 0) selected @endif value="0">Off</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4  p-t-20">
+                                                    <label >Category Sort (1 - 2 - 3, ...)</label>
+                                                    <div
+                                                        class=" txt-full-width">
+                                                        <input value="{{ $items->sort }}" type="number" name="sort" class="form-control" >
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4  p-t-20">
+                                                    <label>Offer</label>
+                                                    <select class="form-control" name="featured">
+                                                            <option @if($items->featured == 1) selected @endif value="1">Yes !</option>
+                                                            <option @if($items->featured == 0) selected @endif value="0">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-6  p-t-20" style="margin: 0 auto">
                                                     <div
@@ -45,6 +70,14 @@
                                                         <label >Category Name English</label>
 
                                                     </div>
+                                                </div>
+                                                <div class="col-md-12  p-t-20" style="margin: 0 auto">
+                                                    <label>Choose Department</label>
+                                                    <select class="form-control" name="depart">
+                                                        @foreach($departs as $depart)
+                                                            <option @if($depart->id == $items->depart) selected @endif value="{{ $depart->id }}">{{ $depart->title['en'] }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
 
                                                 <div class="col-md-12  p-t-20" style="margin: 0 auto">

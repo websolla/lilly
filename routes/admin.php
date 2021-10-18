@@ -10,7 +10,7 @@ Route::group(['namespace' => 'AdminController', 'middleware' => 'auth', 'prefix'
         /* ______________________________________________________________________________________ */
         Route::resource(    'sliders',      'SlidersController'          );//Slider controller
         /* ______________________________________________________________________________________ */
-         Route::resource(    'blogs',        'BlogsController'            );//blogs controller
+         Route::resource(    'blogs',       'BlogsController'            );//blogs controller
         /* ______________________________________________________________________________________ */
         Route::resource(    'translates',   'TranslateController'        );// translate
         /* ______________________________________________________________________________________ */
@@ -20,7 +20,11 @@ Route::group(['namespace' => 'AdminController', 'middleware' => 'auth', 'prefix'
         /* ______________________________________________________________________________________ */
         Route::resource(    'delivery',     'DeliveryController'         );//Delivery Fee controller
         /* ______________________________________________________________________________________ */
-        Route::resource(    'ads',     'AdsController'         );//Ads controller
+        Route::resource(    'ads',          'AdsController'              );//Ads controller
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'departs',      'DepartController'           );//Depart controller
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'categories',    'CategoryController'        );//Category controller
        
  
     });

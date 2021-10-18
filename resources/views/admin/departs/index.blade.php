@@ -46,7 +46,6 @@
 											<thead>
 												<tr>
 													<th class="center"></th>
-													<th class="center"> Image </th>
 													<th class="center"> Title </th>
 
 													<th class="center"> More Details </th>
@@ -59,9 +58,6 @@
 
 													<tr class="odd gradeX">
 														<td></td>
-														<td class="user-circle-img center">
-															<img width="80" src="{{ Helper::getImg($item->img) }}" alt="img">
-														</td>
 
 
 														<td class="center">{{ $item->title['en'] }}</td>
