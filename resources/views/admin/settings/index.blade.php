@@ -10,7 +10,7 @@
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                href="{{ url('admin') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                href="{{ url('websolla-db') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active">All {!! Helper::tr($itemsnames) !!}</li>
 							</ol>
@@ -29,16 +29,6 @@
 									</div>
 								</div>
 								<div class="card-body ">
-									<div class="row p-b-20">
-										<div class="col-md-6 col-sm-6 col-6">
-											<div class="btn-group">
-                                            <a href="{{ url('admin/'.$itemsnames.'/create') }}" id="addRow" class="btn btn-info">
-													Add {!! Helper::tr($itemname) !!} <i class="fa fa-plus"></i>
-												</a>
-											</div>
-										</div>
-
-									</div>
 									<div class="table-scrollable">
 										<table class="table table-hover table-checkable order-column full-width"
 											id="example4">
@@ -59,7 +49,7 @@
 													<td class="center">{{$item->phone}}</td>
 													<td class="center">{{$item->email}}</td>
 													<td class="center">{{$item->mobile}}</td>
-													<td class="center"><a href="{{ url('admin/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
+													<td class="center"><a href="{{ url('websolla-db/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
                                                 </tr>
                                                 @endforeach
 											</tbody>

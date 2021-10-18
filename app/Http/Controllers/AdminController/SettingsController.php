@@ -35,15 +35,22 @@ class SettingsController extends Controller
     public function update(Request $request, $id){
 
         $data = $request->validate([
-            'phone'             => 'required|numeric',
+            'email'             => 'required|email|max:191',
             'mobile'            => 'required|numeric',
+            'phone'             => 'required|numeric',
             'facebook'          => 'required',
-            'address'           => 'required',
             'twitter'           => 'required',
-            'email'             => 'required|max:191',
-            'pdf'               => 'nullable|mimes:pdf,docx',
+            'youtube'           => 'required',
+            'instagram'         => 'required',
+            'tags'              => 'required',
+            'description'       => 'required',
+            'head'              => 'nullable|mimes:png',
+            'logo'              => 'nullable|mimes:png',
+            'address.*'         => 'required',
+            
         ]);
 
+        $data['address']  = json_encode( $request->address );
         if($request['pdf'] != null){
             $img_name = explode("/", $request->img_value);
             $data['pdf'] = Helper::imageUploade($data['pdf'], $this->data['view']);

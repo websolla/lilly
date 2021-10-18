@@ -177,20 +177,27 @@
 								</ul>
 							</li>
 							<li  class="nav-item ">
+								<a href="{{ url('websolla-db/ads') }}" class="nav-link nav-toggle">
+									<i class="fa fa-globe"></i>
+									<span class="title">Ads</span>
+									<span class="arrow"></span>
+								</a>
+                            </li>
+							<li  class="nav-item ">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="fa fa-globe"></i>
-									<span class="title">Countries</span>
+									<span class="title">Delivey Area</span>
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
 									<li class="nav-item" >
-                                    	<a href="{{ url('websolla-db/countries/create') }}"  class="nav-link ">
+                                    	<a href="{{ url('websolla-db/delivery/create') }}"  class="nav-link ">
 											<span class="title">Add New</span>
 										</a>
 									</li>
 									<li class="nav-item">
-                                    	<a href="{{ url('websolla-db/countries') }}" class="nav-link ">
-											<span class="title">View All Categories</span>
+                                    	<a href="{{ url('websolla-db/delivery') }}" class="nav-link ">
+											<span class="title">View All</span>
 										</a>
 									</li>
 								</ul>

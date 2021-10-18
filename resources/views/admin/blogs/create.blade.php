@@ -10,7 +10,7 @@
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                href="{{ url('admin') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                href="{{ url('websolla-db') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active"> New {!! Helper::tr($itemname) !!}</li>
 							</ol>
@@ -42,8 +42,8 @@
 													<header>{{ $language['name'] }}</header>
 												</div>
 												<div class="card-body " id="bar-parent1">
-													<form method="post" action="{{ url('admin/'.$itemsnames) }}"  enctype="multipart/form-data">
-														@csrf
+													<form method="post" action="{{ url('websolla-db/'.$itemsnames) }}"  enctype="multipart/form-data">
+														{!! csrf_field() !!}
 														<div class="row">
 														<div class="col-lg-12 p-t-20">
 															<label >Title <span style="color:red">{{ $language['name'] }}</span> </label>
@@ -67,7 +67,7 @@
 										</div>
 									</div>
 									@endforeach
-									<div class="col-md-4 col-md-offset-4 p-t-20" style="margin: 0 auto">
+									<div class="col-md-12 " style="margin: 0 auto">
 										<div
 											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
 											<input type="file" name="img" class="mdl-textfield__input" >
@@ -75,7 +75,9 @@
 
 										</div>
 									</div>
-									<button type="submit" class="btn btn-primary">Submit</button>
+									<div class="col-md-12 text-center">
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</div>
 								</form>
 								</div>
 							</div>

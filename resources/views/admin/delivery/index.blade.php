@@ -10,7 +10,7 @@
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                href="{{ url('admin') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                href="{{ url('websolla-db') }}">{!! Helper::tr('home') !!}</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active">All {!! Helper::tr($itemsnames) !!}</li>
 							</ol>
@@ -33,7 +33,7 @@
 									<div class="row p-b-20">
 										<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group">
-                                            <a href="{{ url('admin/'.$itemsnames.'/create') }}" id="addRow" class="btn btn-info">
+                                            <a href="{{ url('websolla-db/'.$itemsnames.'/create') }}" id="addRow" class="btn btn-info">
 													Add {!! Helper::tr($itemname) !!} <i class="fa fa-plus"></i>
 												</a>
 											</div>
@@ -46,7 +46,8 @@
 											<thead>
 												<tr>
 													<th class="center"></th>
-													<th class="center"> Image </th>
+													<th class="center"> Area Name </th>
+													<th class="center"> Area Fee </th>
 												
 													<th class="center"> More Details </th>
 													<th class="center"> Delete </th>
@@ -59,15 +60,18 @@
 													<tr class="odd gradeX">
 														<td></td>
 														<td class="user-circle-img center">
-															<img width="80" src="{{ Helper::getImg($item->img) }}" alt="img">
+															{{ $item->area['en'] }}
+														</td>
+														<td class="user-circle-img center">
+															{{ $item->fee }} L.E
 														</td>
 														
 													
-														<td class="center"><a href="{{ url('admin/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
+														<td class="center"><a href="{{ url('websolla-db/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
 														<td class="center">
-															<form method="post" action="{{ url('admin/'.$itemsnames.'/'.$item->id) }}">
+															<form method="post" action="{{ url('websolla-db/'.$itemsnames.'/'.$item->id) }}">
 																<input name="_method" type="hidden" value="DELETE">
-																	@csrf
+																{!! csrf_field() !!}
 																<button value="DELETE" type="submit" class="btn btn-tbl-delete btn-xs">
 																	<i class="fa fa-trash-o "></i>
 																</button>

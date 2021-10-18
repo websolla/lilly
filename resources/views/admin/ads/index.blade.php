@@ -30,16 +30,6 @@
 									</div>
 								</div>
 								<div class="card-body ">
-									<div class="row p-b-20">
-										<div class="col-md-6 col-sm-6 col-6">
-											<div class="btn-group">
-                                            <a href="{{ url('websolla-db/'.$itemsnames.'/create') }}" id="addRow" class="btn btn-info">
-													Add {!! Helper::tr($itemname) !!} <i class="fa fa-plus"></i>
-												</a>
-											</div>
-										</div>
-
-									</div>
 									<div class="table-scrollable">
 										<table class="table table-hover table-checkable order-column full-width"
 											id="example4">
@@ -48,8 +38,8 @@
 													<th class="center"></th>
 													<th class="center"> Image </th>
 													<th class="center"> Title </th>
+												
 													<th class="center"> More Details </th>
-													<th class="center"> Delete </th>
 												</tr>
 											</thead>
 											<tbody>
@@ -59,20 +49,15 @@
 													<tr class="odd gradeX">
 														<td></td>
 														<td class="user-circle-img center">
-															<img width="80" src="{{ Helper::getImg($item->img) }}" alt="img">
+															<img src="{{ Helper::getImg($item->img) }}" width="80">
+														</td>
+														<td class="user-circle-img center">
+															{{ $item->title['en'] }} 
 														</td>
 														
-													<td class="center">{{ $item->title['en'] }}</td>
+													
 														<td class="center"><a href="{{ url('websolla-db/'.$itemsnames.'/'. $item->id .'/edit') }}"><span class="label label-sm label-success">Edit </span></a></td>
-														<td class="center">
-															<form method="post" action="{{ url('websolla-db/'.$itemsnames.'/'.$item->id) }}">
-																<input name="_method" type="hidden" value="DELETE">
-																	{!!  csrf_field() !!}
-																<button value="DELETE" type="submit" class="btn btn-tbl-delete btn-xs">
-																	<i class="fa fa-trash-o "></i>
-																</button>
-															</form>
-														</td>
+														
 													</tr>
 													@empty
 													<tr>

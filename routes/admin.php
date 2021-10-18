@@ -15,6 +15,12 @@ Route::group(['namespace' => 'AdminController', 'middleware' => 'auth', 'prefix'
         Route::resource(    'translates',   'TranslateController'        );// translate
         /* ______________________________________________________________________________________ */
         Route::resource(    'pages',        'PagesController'            );//Pages controller
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'settings',     'SettingsController'         );//Settings controller
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'delivery',     'DeliveryController'         );//Delivery Fee controller
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'ads',     'AdsController'         );//Ads controller
        
  
     });

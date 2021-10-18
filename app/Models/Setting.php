@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     protected $guarded = [];
+
+    public function getAddressAttribute()
+    {
+        return json_decode($this->attributes['address'], true);
+    }
+
 }
