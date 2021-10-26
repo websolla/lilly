@@ -75,6 +75,16 @@
 										</div>
 									</div>
 									
+								
+									<div class="col-lg-12 p-t-20">
+										<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input type="file"  name="head" class="mdl-textfield__input"
+												id="txtFirstName">
+												<img src="{{ Helper::getImg($items->head) }}" width="200px">
+											<label class=""> Head Image ( Home Page ) </label>
+										</div>
+									</div>
 									<div class="col-lg-6 p-t-20">
 										<div
 											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">

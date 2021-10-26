@@ -31,7 +31,7 @@
                                         <div class="tab-content">
                                             <div class="row">
                                                 <div class="col-md-4  p-t-20">
-                                                    <label>Offer</label>
+                                                    <label>Offer <span class="fa fa-dollar"></span></label>
                                                     <select class="form-control" name="offer">
                                                             <option @if($items->offer == 1) selected @endif value="1">On</option>
                                                             <option @if($items->offer == 0) selected @endif value="0">Off</option>
@@ -47,7 +47,7 @@
                                                 </div>
 
                                                 <div class="col-md-4  p-t-20">
-                                                    <label>Offer</label>
+                                                    <label>Featured <span class="fa fa-star"></span></label>
                                                     <select class="form-control" name="featured">
                                                             <option @if($items->featured == 1) selected @endif value="1">Yes !</option>
                                                             <option @if($items->featured == 0) selected @endif value="0">No</option>

@@ -160,6 +160,25 @@
 							<li  class="nav-item ">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="fa fa-server"></i>
+									<span class="title">Depart</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item" >
+                                    	<a href="{{ url('websolla-db/departs/create') }}"  class="nav-link ">
+											<span class="title">Add New</span>
+										</a>
+									</li>
+									<li class="nav-item">
+                                    	<a href="{{ url('websolla-db/departs') }}" class="nav-link ">
+											<span class="title">View All Departments</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li  class="nav-item ">
+								<a href="#" class="nav-link nav-toggle">
+									<i class="fa fa-server"></i>
 									<span class="title">Categories</span>
 									<span class="arrow"></span>
 								</a>

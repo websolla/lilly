@@ -13,4 +13,9 @@ class Depart extends Model
     {
         return json_decode($this->attributes['title'], true);
     }
+
+    public function category()
+    {
+         return $this->hasMany(Category::class, 'depart', 'id');
+    }
 }

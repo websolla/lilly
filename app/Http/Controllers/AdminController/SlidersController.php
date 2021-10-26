@@ -48,8 +48,8 @@ class SlidersController extends Controller
     {
 
         $data = $request->validate([
-            'title.*'        => 'required|string',
-            'description.*'  => 'required|string',
+            'title.*'        => 'nullable|string',
+            'description.*'  => 'nullable|string',
             'color'          => 'required',
             'link'           => 'required',
             'img'            => 'required|mimes:jpg,jpeg,png',
@@ -73,8 +73,8 @@ class SlidersController extends Controller
     public function update(Request $request, $id){
 
         $data = $request->validate([
-            'title.*'        => 'required|string',
-            'description.*'  => 'required|string',
+            'title.*'        => 'nullable|string',
+            'description.*'  => 'nullable|string',
             'color'          => 'required',
             'link'           => 'required',
             'img'            => 'nullable|mimes:jpg,jpeg,png',

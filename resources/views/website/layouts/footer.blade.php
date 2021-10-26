@@ -116,6 +116,27 @@
     <script src="{{ asset('website') }}/assets/vendor/count-down/jquery.countdown.min.js"></script>
     <!-- Theme Js -->
     <script src="{{ asset('website') }}/assets/js/custom.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready( function(){
+            
+            $('.slider-act').first().addClass('active');
+            $('.checking').first().attr('checked', '');
+        });
+
+/*         $('.open-popup-link').magnificPopup({
+  type:'inline',
+  midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+}); */
+
+$('.popup-ajax').magnificPopup({
+    type: 'ajax'
+});
+
+
+
+    </script>
 </body>
 <!-- end body -->
 

@@ -24,7 +24,12 @@ Route::group(['namespace' => 'AdminController', 'middleware' => 'auth', 'prefix'
         /* ______________________________________________________________________________________ */
         Route::resource(    'departs',      'DepartController'           );//Depart controller
         /* ______________________________________________________________________________________ */
-        Route::resource(    'categories',    'CategoryController'        );//Category controller
+        Route::resource(    'categories',   'CategoryController'         );//Category controller
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'products',     'ProductController'          );//Products controller
+        Route::get(         'img/{id}',     'ProductController@img_del'  );//Delete Product Image Func
+        /* ______________________________________________________________________________________ */
+        Route::resource(    'collections',   'CollectionController'      );//Collection controller
        
  
     });

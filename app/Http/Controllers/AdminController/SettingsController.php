@@ -44,11 +44,16 @@ class SettingsController extends Controller
             'instagram'         => 'required',
             'tags'              => 'required',
             'description'       => 'required',
-            'head'              => 'nullable|mimes:png',
+            'head'              => 'nullable|mimes:jpg,webp,jpeg',
             'logo'              => 'nullable|mimes:png',
             'address.*'         => 'required',
             
         ]);
+
+        if($request['head'] != null){ // If Condition To check If Request != null
+            $img_name    = explode("/", $request->img_value);
+            $data['head'] = Helper::imageUploade($data['head'], $this->data['view']);
+        }
 
         $data['address']  = json_encode( $request->address );
         if($request['pdf'] != null){

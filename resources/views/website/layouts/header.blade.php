@@ -40,6 +40,18 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('website') }}/assets/css/style.css">
 </head>
+<style>
+    
+
+    .example-popup {
+      position: relative;
+      background: #FFF;
+      padding: 20px;
+      width: auto;
+      max-width: 75%;
+      margin: 20px auto;
+    }
+    </style>
 
 <body>
     <!-- Preload -->

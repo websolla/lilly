@@ -185,88 +185,7 @@
         </div>
     </div>
     <!-- End Mini Cart -->
-    <!-- Quick View Modal-->
-    <div class="modal-quick-view modal fade" id="px-quick-view" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <button class="btn-close position-absolute end-0 top-0 me-2 mt-2 z-index-1" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body p-3">
-                    <div class="row">
-                        <!-- Product Gallery -->
-                        <div class="col-lg-6 lightbox-gallery product-gallery">
-                            <img src="assets/img/product-1.jpg" class="img-fluid" title="" alt="">
-                        </div>
-                        <!-- End Product Gallery -->
-                        <!-- Product Details -->
-                        <div class="col-lg-6">
-                            <div class="product-detail pt-4">
-                                <div class="products-brand pb-2">
-                                    <span>Brand name</span>
-                                </div>
-                                <div class="products-title mb-2">
-                                    <h1 class="h4">Product Title Here</h1>
-                                </div>
-                                <div class="rating-star text small pb-4">
-                                    <small>(4 Reviews )</small>
-                                </div>
-                                <div class="product-description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
-                                </div>
-                                <div class="product-attribute">
-                                    <label class="fs-6 text-dark pb-2 fw-500">Size</label>
-                                    <div class="nav-thumbs nav mb-3">
-                                        <div class="form-check radio-text form-check-inline me-2">
-                                            <input class="form-check-input" type="radio" name="size3" id="xs2" checked="">
-                                            <label class="radio-text-label" for="xs2">XS</label>
-                                        </div>
-                                        <div class="form-check radio-text form-check-inline me-2">
-                                            <input class="form-check-input" type="radio" name="size3" id="s2">
-                                            <label class="radio-text-label" for="s2">S</label>
-                                        </div>
-                                        <div class="form-check radio-text form-check-inline me-2">
-                                            <input class="form-check-input" type="radio" name="size3" id="m2">
-                                            <label class="radio-text-label" for="m2">M</label>
-                                        </div>
-                                        <div class="form-check radio-text form-check-inline me-2">
-                                            <input class="form-check-input" type="radio" name="size3" id="l2">
-                                            <label class="radio-text-label" for="l2">L</label>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
-                                <div class="product-price fs-3 fw-500 mb-2">
-                                    <del class="text-muted fs-6">38.<small>50</small></del>
-                                    <span class="text-primary"> 20.<small>50</small></span>
-                                </div>
-                                <div class="product-detail-actions d-flex flex-wrap pt-3">
-                                    <div class="cart-qty me-3 mb-3">
-                                        <div class="dec qty-btn">-</div>
-                                        <input class="cart-qty-input form-control" type="text" name="qtybutton" value="1">
-                                        <div class="inc qty-btn">+</div>
-                                    </div>
-                                    <div class="cart-button mb-3 d-flex">
-                                       <a href="shopping-cart.php" class="btn btn-dark me-3">
-                                            <i class="bi bi-cart"></i>
-                                            Add to cart
-                                        </a>
-                                       <a href="wishlist.php" class="btn btn-outline-primary me-3" >
-                                        <i class="bi bi-heart"></i>
-                                       </a>
-                    
-                                        <a href="product-details.php" class="btn btn-outline-primary me-3">
-                                            <i class="bi bi-eye-fill"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Product Details -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Quick View Modal-->
+  
     <!-- Size chart popup-->
     <div class="modal-size-chart modal fade" id="px_size_chart_modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -538,9 +457,10 @@
                         </ul>
                         <!-- Top social -->
                         <div class="nav header-social justify-content-end d-none d-lg-block white-link">
-                            <a class="h-social-link" href="javascript:void(0);"><i class="bi bi-facebook"></i></a>
-                            <a class="h-social-link" href="javascript:void(0);"><i class="bi bi-instagram"></i></a>
-                            <a class="h-social-link" href="javascript:void(0);"><i class="bi bi-twitter"></i></a>
+                            <a class="h-social-link" href="{{ Helper::settings()->facebook }}"><i class="bi bi-facebook"></i></a>
+                            <a class="h-social-link" href="{{ Helper::settings()->instagram }}"><i class="bi bi-instagram"></i></a>
+                            <a class="h-social-link" href="{{ Helper::settings()->twitter }}"><i class="bi bi-twitter"></i></a>
+                            <a class="h-social-link" href="{{ Helper::settings()->youtube }}"><i class="bi bi-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -550,15 +470,15 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Logo -->
-                <a class="navbar-brand" href="index.php">
-                    <img src="assets/img/logo/logo.png"  width="245" title="lilly Fashion" alt="lilly logo">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('website/assets/img/logo/logo.png') }}"  width="245" title="lilly Fashion" alt="lilly scarf logo">
                 </a>
                 <!-- Logo -->
                 <!-- Menu -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class=" nav-item">
-                            <a href="index.php" class="nav-link">Home</a>
+                            <a href="{{ url('/') }}" class="nav-link">{{ Helper::tr_web('home') }}</a>
                         </li>
                        
                         <li class="dropdown dropdown-full nav-item">
@@ -567,46 +487,19 @@
                             <div class="dropdown-menu dropdown-menu-lg py-lg-2">
                                 <div class="container px-0">
                                     <div class="row g-0">
-                                        <div class="col-md-6 my-3">
-                                            <h6 class="px-3">Scarf</h6>
-                                            <ul class="list-unstyled">
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 my-3">
-                                            <h6 class="px-3">Clothes</h6>
-                                            <ul class="list-unstyled">
-                                            <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.php" class="dropdown-item">Porduct Name </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        @foreach(  Helper::Departs() as $depart )
+                                            <div class="col-md-3 my-3">
+                                                <h6 class="px-3">{{ $depart->title[Helper::language_now()] }}</h6>
+                                                <ul class="list-unstyled">
+                                                    @foreach($depart->category as $cat)
+                                                        <li>
+                                                            <a href="{{ url('products/'.$cat->id.'/'.str_replace(' ', '-',$cat->title[Helper::language_now()])) }}" class="dropdown-item">{{ $cat->title[Helper::language_now()] }} </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endforeach
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -735,3 +628,6 @@
     <!-- Header End -->
     <!-- Main -->
     <main>
+
+
+        

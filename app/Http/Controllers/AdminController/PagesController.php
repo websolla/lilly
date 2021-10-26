@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Helper\Helper;
-use App\Models\Page as model ;
+use App\Models\Page as model;
 
 class PagesController extends Controller
 {

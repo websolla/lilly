@@ -5,9 +5,7 @@ use LaravelLocalization;
 
     use App\Models\Setting;
     use App\Models\Page;
-    use App\Models\Project;
-    use App\Models\Country;
-use App\Models\Service;
+use App\Models\Depart;
 
 class Helper{
 
@@ -68,21 +66,12 @@ class Helper{
        // return Pages::get();
     }
 
-    public static function projects(){
+    public static function Departs(){
 
-        return Project::get();
-
-    }
-    public static function country(){
-
-        return Country::get();
+        return Depart::get();
 
     }
-    public static function services(){
 
-        return Service::get();
-
-    }
 
 
 

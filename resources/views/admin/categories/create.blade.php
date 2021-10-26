@@ -28,7 +28,7 @@
                                         <div class="tab-content">
                                             <div class="row">
                                                 <div class="col-md-4  p-t-20">
-                                                    <label>Offer</label>
+                                                    <label>Offer <span class="fa fa-dollar"></span></label>
                                                     <select class="form-control" name="offer">
                                                             <option value="1">On</option>
                                                             <option value="0">Off</option>
@@ -39,12 +39,11 @@
                                                     <div
                                                         class=" txt-full-width">
                                                         <input type="number" name="sort" class="form-control" >
-
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4  p-t-20">
-                                                    <label>Offer</label>
+                                                    <label>Featured <span class="fa fa-star"></span></label>
                                                     <select class="form-control" name="featured">
                                                             <option value="1">Yes !</option>
                                                             <option selected value="0">No</option>

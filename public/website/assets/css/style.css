@@ -12523,6 +12523,7 @@ header [data-cart-items] {
 /*Menu Hover & Header Fluid Space 
 -----------------------------------*/
 @media (min-width: 1400px) {
+
   .navbar-expand-xxl .dropdown-mega-menu {
     width: 100%;
     background: #fff; }
@@ -12810,7 +12811,18 @@ header [data-cart-items] {
   .navbar-expand-md .navbar-nav > .nav-item .mob-menu {
     display: none; } }
 
+
+
+
 @media (min-width: 576px) {
+  .carousel-caption{
+    bottom:40% !important;
+  }
+
+  .carousel-caption h5{
+    font-size:60px !important;
+  }
+
   .navbar-expand-sm .dropdown-mega-menu {
     width: 100%;
     background: #fff; }
@@ -13268,3 +13280,10 @@ header [data-cart-items] {
   border-top: 1px solid rgba(0, 0, 0, 0.2); }
   .footer-border-top.light {
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+    @media (max-width: 991.98px) { 
+      .product-card-1 .product-cart-btn{
+        bottom: 0px;
+      }
+   }
+ 

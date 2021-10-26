@@ -20,7 +20,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     
         //Home Page
         Route::get('/', 'HomeController@index');
-    
+        Route::get('product/{id}', 'HomeController@product_pop');// Popup Product In Desktop Version
+        Route::get('products/{id}/{slug?}', 'ProductsController@index');//  Products Category Shop 
+        Route::get('lilly-products', 'ProductsController@allProducts');//  Products Shop All
+        Route::get('product-details/{id}/{slug?}', 'ProductsController@index');//  Product Details 
+
+
     
         
     
